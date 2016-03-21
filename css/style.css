@@ -5,4 +5,20 @@
 .box {
   border: 1px solid black;
   height: 150px;
+  font-size: 50px;
+  text-align: center;
+  padding-top: 30px;
 }
+
+
+
+.checkbox {
+  align-items: center;
+}
+
+.X {
+  color: red;
+}
+
+.O {
+  color: blue;

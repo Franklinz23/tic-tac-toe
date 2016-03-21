@@ -9,12 +9,14 @@
     <!-- Bootstrap CSS from CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-    <!-- link to custom stylesheet (always require after Bootstrap) -->
+    <!-- CSS link -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <!-- jQuery from CDN -->
+    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js'></script>
 
-
-    <!-- link to custom javascript file (always require after external JS libraries) -->
+    <!-- JS link -->
+    <script type="text/javascript" src="js/app.js"></script>
 
     <title>Tic Tac Toe</title>
   </head>
@@ -25,25 +27,53 @@
           <h1>Tic Tac Toe</h1>
           <hr>
         </div>
+        <div class="player">
+          <h2>Player: </h2>
+        </div>
       </div>
       <div class="row">
 
-        <!-- a column represents our game board -->
+
         <!-- the `offset` class helps us center the board -->
         <div class="col-md-6 col-md-offset-3" id="board">
 
-          <!-- you can put rows inside of columns! -->
-          <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
+
           <div class="row">
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
+            <div class="col-xs-4 box" id="topleft" ></div>
+            <div class="col-xs-4 box" id="topmid" ></div>
+            <div class="col-xs-4 box" id="topright" ></div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-4 box" id="midleft" ></div>
+            <div class="col-xs-4 box" id="midmid" ></div>
+            <div class="col-xs-4 box" id="midright" ></div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-4 box" id="botleft" ></div>
+            <div class="col-xs-4 box" id="botmid" ></div>
+            <div class="col-xs-4 box" id="botright" ></div>
           </div>
 
 
 
         </div>
       </div>
+
+      <br />
+        <input id="reset" class="reset" type="button" value="Reset" />
+
+      <div class="choosePlayer">
+
+        <form>
+          <input type="checkbox" class="checkbox" name="playerX" value="X Player"> X Player
+          <br />
+          <input type="checkbox" class="checkbox" name="playerO" value="O Player"> O Player
+        </form>
+
+      </div>
+
     </div>
   </body>
 </html>
