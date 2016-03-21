@@ -9,7 +9,7 @@ var $allBoxes = $(".box");
 //$('#topleft') && $('#topmid') && $('#topright') && $('#midleft') && $('#midmid') && $('#midright') && $('#botleft') && $('#botmid') && $('#botright') ;
 
 //selects X as the first player
-var turn = "X";
+var turn = 0;
 
 
 //this uses the var $theBox from earlier
@@ -18,21 +18,24 @@ function reset() {
   $allBoxes.text("");
   $allBoxes.removeClass("X");
   $allBoxes.removeClass("O");
-
-//and in the same functio
-//resets back to player X
-turn = "X";
+  turn = 0;
 }
 
 //this will change to next player turn
-function nextTurn() {
-  if (turn === "X") {
-    turn = "O";
-  } else {
-    turn = "X";
+
+$allBoxes.on('click', function nextTurn () {
+  if ( !$(this).html() ) {
+    turn++;
+
+    if (turn % 2 === 0 ) {
+      $(this).html("O");
+    }   else if (turn % 2 !== 0){
+      $(this).html("X");
+    }
+
   }
 
-}
+});
 
 //DETERMINE winner
 
@@ -101,14 +104,6 @@ $("#reset").on("click", function() {
   reset();
 });
 
-$allBoxes.on('click', function () {
-  if ($(this).text() === "") {
-    $(this).text(turn);
-    $(this).addClass(turn);
-  }
-}
-
-);
 
 var champ = getWinner();
      if (champ) {
